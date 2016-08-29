@@ -5,7 +5,8 @@
             'restclient',
             'ui.router',
 
-            'models.product',
+            'models.Product',
+            'models.ProductCategory',
 
             'partials.products'
         ])
@@ -21,5 +22,8 @@
             apiProvider.endpoint('products')
                 .route('/products/:code')
                 .model('Product');
+            apiProvider.endpoint('productcategories')
+                .route('/productcategories/:id')
+                .model('ProductCategory');
         });
 })();

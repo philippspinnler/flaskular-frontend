@@ -1,15 +1,18 @@
-<h2>Products <small>List</small></h2>
+<h2>Products <small>{{vm.productCategory ? vm.productCategory.name : 'All'}}</small></h2>
+<input type="text" placeholder="Filter" class="form-control" ng-model="vm.filter">
 <table class="table">
     <thead>
     <tr>
-        <th>Code</th>
         <th>Name</th>
+        <th>Manufacturer</th>
+        <th>Price</th>
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="product in vm.products">
-        <td>{{product.code}}</td>
-        <td>{{product.name}}</td>
+    <tr ng-repeat="product in vm.products | filter: vm.filter | orderBy: 'shortDescription'">
+        <td><a href="" ui-sref="productdetail({code: product.code})">{{product.shortDescription}}</a></td>
+        <td>{{product.manufacturer}}</td>
+        <td>{{product.currency}} {{product.price}}</td>
     </tr>
     </tbody>
 </table>
