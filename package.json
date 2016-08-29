@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server -a 0.0.0.0 -p 8282"
+    "start": "http-server -a 0.0.0.0 -p 8000"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "angular-ui-router": "^0.3.1",
     "bootstrap": "^3.3.7",
     "jquery": "^3.1.0",
+    "pace": "HubSpot/pace"
   },
   "devDependencies": {
     "http-server": "^0.9.0"
